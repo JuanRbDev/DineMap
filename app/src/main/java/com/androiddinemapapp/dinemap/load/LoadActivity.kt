@@ -2,8 +2,11 @@ package com.androiddinemapapp.dinemap.load
 
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.ConnectivityManager
+import android.net.Network
 import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -20,9 +23,17 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LoadActivity : AppCompatActivity(){
+
+    private lateinit var redAdministrar: ConnectivityManager
+    private lateinit var  redLLamada : ConnectivityManager.NetworkCallback
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_load)
+
+        redAdministrar = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        registrarLlamadaRed()
 
         MetodoCarga()
     }
@@ -57,5 +68,34 @@ class LoadActivity : AppCompatActivity(){
             redActiva.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
             else -> false
         }
+    }
+
+    private fun registrarLlamadaRed(){
+        val requerimientoRed = NetworkRequest.Builder()
+            .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+            .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
+            .build()
+
+        redLLamada = object : ConnectivityManager.NetworkCallback(){
+            override fun onAvailable(network: Network) {
+                MetodoCarga()
+            }
+
+            override fun onLost(network: Network) {
+               runOnUiThread {
+                   Toasty.custom(
+                       this@LoadActivity, "Conexión a internet perdida",
+                       R.drawable.icon_error_internet, R.color.black, 3000, true, false
+                   ).show()
+               }
+            }
+        }
+
+        redAdministrar.registerNetworkCallback(requerimientoRed, redLLamada)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        redAdministrar.unregisterNetworkCallback(redLLamada)
     }
 }
