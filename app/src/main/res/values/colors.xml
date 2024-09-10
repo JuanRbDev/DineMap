@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="DineColorPrimary">#096dff</color>
     <color name="DineColorSecundary">#de970e</color>
+    <color name="DineColorTerceary">#002A68</color>
     <color name="Transparent">#00FFFFFF</color>
 </resources>
