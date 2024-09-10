@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Dinemap</string>
-    <string name="zendrixputo">Zendrixselacome</string>
-    <string name="zendrix_puto">zendrix puto</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="descripcionImg">Dine-Logo</string>
+    <string name="loginGoogle">Continuar con Google</string>
+    <string name="loginFacebook">Continuar con Facebook</string>
+    <string name="otroMetodo">Otro método...</string>
+    <string name="textoCargando">Cargando...</string>
 </resources>
