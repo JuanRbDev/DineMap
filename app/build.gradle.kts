@@ -39,6 +39,10 @@ dependencies {
     //Toast personalizado
     implementation ("com.github.GrenderG:Toasty:1.5.2")
 
+    //Glided gif
+    implementation ("com.github.bumptech.glide:glide:4.15.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

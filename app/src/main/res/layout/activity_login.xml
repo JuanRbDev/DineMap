@@ -60,36 +60,12 @@
             app:iconPadding="20dp"
             app:iconSize="30dp"/>
 
-        <!--Botones para loguearse con otra cuenta-->
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/Transparent"
-            android:text="@string/loginGoogle"
-            android:textColor="@color/black"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/icon_google"
-            app:iconSize="30dp"
-            app:iconTint="@null"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/Transparent"
-            android:text="@string/loginFacebook"
-            android:textColor="@color/black"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/icon_facebook"
-            app:iconSize="30dp"
-            app:iconTint="@null"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/Transparent"
-            android:text="@string/otroMetodo"
-            android:textColor="@color/black"
-            app:cornerRadius="10dp" />
+        <ImageView
+            android:id="@+id/gifImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:contentDescription="Gif"/>
 
     </LinearLayout>
 
