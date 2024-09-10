@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    //Toast personalizado
+    implementation ("com.github.GrenderG:Toasty:1.5.2")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

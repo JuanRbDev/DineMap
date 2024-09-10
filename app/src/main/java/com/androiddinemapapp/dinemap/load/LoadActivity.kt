@@ -9,8 +9,8 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.androiddinemapapp.dinemap.MainActivity
 import com.androiddinemapapp.dinemap.R
+import com.androiddinemapapp.dinemap.main.MainActivity
 import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,7 +38,7 @@ class LoadActivity : AppCompatActivity(){
                 }
                 else{
                     Toasty.custom(this@LoadActivity, "No hay conexión a internet",
-                        R.drawable.icon_error_internet, R.color.black, 5000, true, false).show()
+                        R.drawable.icon_error_internet, R.color.black, 3000, true, false).show()
                 }
             },3000)
         }
