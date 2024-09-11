@@ -2,7 +2,6 @@ package com.androiddinemapapp.dinemap.load
 
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
@@ -10,12 +9,9 @@ import android.net.NetworkRequest
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.androiddinemapapp.dinemap.Login.LoginActivity
+import com.androiddinemapapp.dinemap.Login.InitialActivity
 import com.androiddinemapapp.dinemap.R
-import com.androiddinemapapp.dinemap.main.MainActivity
 import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +41,7 @@ class LoadActivity : AppCompatActivity(){
             }
             Handler(Looper.getMainLooper()).postDelayed({
                 if(internetActivo){
-                    val intent = Intent(this@LoadActivity, LoginActivity::class.java)
+                    val intent = Intent(this@LoadActivity, InitialActivity::class.java)
                     startActivity(intent)
                     overridePendingTransition(R.anim.desvanecimiento_entrada, R.anim.desvanecimiento_salida)
                     finish()

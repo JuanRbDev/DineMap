@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -15,6 +14,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent">
+
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
@@ -24,50 +24,96 @@
 
     </LinearLayout>
 
+    <!--Formulario para loguearse-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:padding="30dp"
         app:layout_constraintTop_toBottomOf="@+id/logoBanner">
 
-        <!--Botones para login y register-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/DineColorSecundary"
-            android:text="@string/login"
-            android:textSize="15sp"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/icon_login"
-            app:iconGravity="textStart"
-            app:iconPadding="20dp"
-            app:iconSize="30dp"/>
+        <!--Loging-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="INICIAR SESION"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/DineColorSecundary"
-            android:text="@string/register"
-            android:textSize="15sp"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/icon_register"
-            app:iconGravity="textStart"
-            app:iconPadding="20dp"
-            app:iconSize="30dp"/>
+        <!--Input correo o nombre de usuario-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo o username:"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/icon_email"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:errorEnabled="true"
+            app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCorreo"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/gifImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:contentDescription="Gif"/>
+        <!--Input contraseña-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:startIconDrawable="@drawable/icon_password"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/gifImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:contentDescription="Gif"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:textSize="15sp"
+                app:cornerRadius="10dp"
+                android:backgroundTint="@color/DineColorPrimary"
+                android:text="Iniciar Sesion"/>
+        </LinearLayout>
+
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
