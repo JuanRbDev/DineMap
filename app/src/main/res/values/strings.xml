@@ -7,4 +7,19 @@
     <string name="loginFacebook">Continuar con Facebook</string>
     <string name="otroMetodo">Otro método...</string>
     <string name="textoCargando">Cargando...</string>
+    <string name="gif">Gif_image</string>
+    <string name="title_iniciar_sesion">INICIAR SESION</string>
+    <string name="title_informacion_personal">INFORMACION PERSONAL</string>
+    <string name="title_informacion_adicional">INFORMACION DE USUARIO</string>
+    <string name="subtitle_correo_username">Correo o username:</string>
+    <string name="subtitle_password">Contraseña:</string>
+    <string name="subtitle_nombres">Nombres:</string>
+    <string name="subtitle_apellidos">Apellidos:</string>
+    <string name="subtitle_dni">DNI:</string>
+    <string name="subtitle_correo">Correo Electronico:</string>
+    <string name="subtitle_numero_phone">Nro° de Celular - (Opcional)</string>
+    <string name="subtitle_username">Username</string>
+    <string name="codigo_postal">+51</string>
+    <string name="title_for_button_iniciar_sesion">Iniciar Sesion</string>
+    <string name="title_for_button_siguiente">Siguiente</string>
 </resources>

@@ -83,9 +83,42 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:contentDescription="Gif"/>
+            android:contentDescription="@string/gif"/>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/pantallaOscura"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/fondo_oscuro_transparente">
+
+        <ImageView
+            android:id="@+id/gifGrande"
+            android:layout_width="300dp"
+            android:layout_height="550dp"
+            android:layout_gravity="end"
+            android:translationY="200dp"
+            android:contentDescription="@string/gif"/>
+
+        <TextView
+            android:id="@+id/globoTexto"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/globo_texto"
+            android:text="Putos"
+            android:fontFamily="@font/comingsoon_regular"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:translationX="50dp"
+            android:translationY="100dp"
+            android:padding="30dp" />
+
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

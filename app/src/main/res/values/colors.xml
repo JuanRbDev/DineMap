@@ -7,4 +7,5 @@
     <color name="DineColorTerceary">#002A68</color>
     <color name="Error">#880000</color>
     <color name="Transparent">#00FFFFFF</color>
+    <color name="fondo_oscuro_transparente">#BC000000</color>
 </resources>
