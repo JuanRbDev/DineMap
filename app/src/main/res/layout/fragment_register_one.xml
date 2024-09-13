@@ -1,189 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--Informacion Personal-->
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:text="@string/title_informacion_personal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
 
-    <LinearLayout
-        android:id="@+id/lytNomApe"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-        <!--Input nombres completos-->
-        <LinearLayout
+        <TextView
+            android:id="@+id/textInfo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="11dp"
-            android:orientation="vertical">
+            android:text="@string/title_informacion_personal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/subtitle_nombres"
-                android:textSize="18sp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lytNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:boxStrokeErrorColor="@color/errorColor"
-                app:endIconMode="clear_text"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@drawable/icon_error"
-                app:hintEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtNombre"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-        <!--Input apellidos completos-->
-        <LinearLayout
+        <TextView
+            android:id="@+id/textNombres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/subtitle_apellidos"
-                android:textSize="18sp" />
+            app:layout_constraintTop_toBottomOf="@id/textInfo1"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/textInfo1"
+            android:text="@string/subtitle_nombres"
+            android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lytApellido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:hintEnabled="false"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@drawable/icon_error"
-                app:boxStrokeErrorColor="@color/errorColor"
-                app:endIconMode="clear_text">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtApellido"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--Input dni-->
-    <TextView
-        android:id="@+id/txtDNI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle_dni"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lytNomApe"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lytdni"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/icon_dni"
-        app:counterEnabled="true"
-        app:counterMaxLength="8"
-        app:hintEnabled="false"
-        app:errorEnabled="true"
-        app:errorIconDrawable="@drawable/icon_error"
-        app:boxStrokeErrorColor="@color/errorColor"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtDNI"
-        app:endIconMode="clear_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtdni"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!--Input correo electronico-->
-    <TextView
-        android:id="@+id/txtCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle_correo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lytdni"
-        android:textSize="18sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lytCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
-        app:hintEnabled="false"
-        app:errorEnabled="true"
-        app:errorIconDrawable="@drawable/icon_error"
-        app:boxStrokeErrorColor="@color/errorColor"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCorreo"
-        app:startIconDrawable="@drawable/icon_email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!--Input nro de celular-->
-    <TextView
-        android:id="@+id/txtPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle_numero_phone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lytCorreo"
-        android:textSize="18sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtPhone"
-        android:orientation="horizontal">
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textNombres"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lytApellido"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_marginTop="10dp"
+            app:hintEnabled="false"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textApellidos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp">
+            app:layout_constraintTop_toBottomOf="@id/textInfo1"
+            app:layout_constraintStart_toEndOf="@id/lytNombre"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/subtitle_apellidos"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytApellido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/lytNombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textNombres"
+            app:layout_constraintWidth_percent="0.5"
+            app:hintEnabled="false"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="65dp"
+                android:id="@+id/edtApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        <TextView
+            android:id="@+id/textDNI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_dni"
+            app:layout_constraintTop_toBottomOf="@id/lytNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytdni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/icon_dni"
+            app:layout_constraintTop_toBottomOf="@id/textDNI"
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
+            app:hintEnabled="false"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtdni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/lytdni"
+            android:text="@string/subtitle_correo"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textCorreo"
+            app:endIconMode="clear_text"
+            app:hintEnabled="false"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/icon_error"
+            app:boxStrokeErrorColor="@color/errorColor"
+            app:startIconDrawable="@drawable/icon_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textCodeCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lytCorreo"
+            android:layout_marginStart="20dp"
+            android:text="@string/subtitle_numero_phone"
+            android:textSize="18sp" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/boxCodeNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textCodeCelular"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:text="@string/codigo_postal"
                 android:focusable="false"
                 android:inputType="none"
                 android:clickable="false"
                 android:cursorVisible="false"/>
+
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lytPhone"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/boxCodeNum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textCodeCelular"
+            android:layout_marginTop="10dp"
             app:startIconDrawable="@drawable/icon_phone"
             app:counterEnabled="true"
             app:counterMaxLength="9"
@@ -191,12 +219,17 @@
             app:errorIconDrawable="@drawable/icon_error"
             app:boxStrokeErrorColor="@color/errorColor"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"/>
+                android:layout_marginHorizontal="20dp"
+                android:inputType="phone" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

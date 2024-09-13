@@ -18,7 +18,7 @@ class LoginActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val imgGif = findViewById<ImageView>(R.id.gifImage)
+
         val edtCorreo = findViewById<TextInputEditText>(R.id.edtCorreo)
         val edtPassword = findViewById<TextInputEditText>(R.id.edtPassword)
         val btnLogin = findViewById<MaterialButton>(R.id.btnLogin)
@@ -61,9 +61,6 @@ class LoginActivity:AppCompatActivity() {
 
         }
 
-        Glide.with(this)
-            .asGif()
-            .load(R.drawable.gif_1)
-            .into(imgGif)
+
     }
 }

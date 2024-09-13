@@ -22,5 +22,7 @@
     <string name="codigo_postal">+51</string>
     <string name="title_for_button_iniciar_sesion">Iniciar Sesion</string>
     <string name="title_for_button_siguiente">Siguiente</string>
-    <string name="title_for_button_atras">Atras</string>
+    <string name="hint_correo">Ingresa tu correo o username</string>
+    <string name="hint_contra">Ingresa tu contraseña</string>
+    <string name="title_for_button_atras">Regresar\n</string>
 </resources>
