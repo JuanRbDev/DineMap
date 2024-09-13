@@ -96,8 +96,9 @@
 
         <ImageView
             android:id="@+id/gifGrande"
-            android:layout_width="300dp"
-            android:layout_height="550dp"
+            android:layout_width="500dp"
+            android:layout_height="750dp"
+            android:translationX="100dp"
             android:layout_gravity="end"
             android:translationY="200dp"
             android:contentDescription="@string/gif"/>

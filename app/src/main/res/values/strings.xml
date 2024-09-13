@@ -22,4 +22,5 @@
     <string name="codigo_postal">+51</string>
     <string name="title_for_button_iniciar_sesion">Iniciar Sesion</string>
     <string name="title_for_button_siguiente">Siguiente</string>
+    <string name="title_for_button_atras">Atras</string>
 </resources>

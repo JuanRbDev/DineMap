@@ -33,8 +33,6 @@ class InitialActivity : AppCompatActivity() {
         val gifGrande = findViewById<ImageView>(R.id.gifGrande)
         val globoTexto = findViewById<TextView>(R.id.globoTexto)
 
-        val animation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.flotar)
-
 
         Glide.with(this)
             .asGif()
@@ -44,8 +42,9 @@ class InitialActivity : AppCompatActivity() {
         imgGif.setOnClickListener{
             val textoAleatorio = textos.random()
 
+            val animacion = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.desvanecimiento_entrada)
+            globoTexto.startAnimation(animacion)
             pantallaOscura.visibility = View.VISIBLE
-            globoTexto.startAnimation(animation)
 
             Glide.with(this)
                 .asGif()
@@ -61,13 +60,11 @@ class InitialActivity : AppCompatActivity() {
         btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
 
